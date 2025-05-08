@@ -71,19 +71,19 @@
   box-sizing: border-box;
 }
 
-.mainContainerCards {
+/* .mainContainerCards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: auto;
   gap: 10px;
-}
+} */
 .icon {
   background-color: var(--rtc-bgColor2);
 }
 
-.mainContainerCards2 {
+/* .mainContainerCards2 {
   display: flex;
-}
+} */
 .containersList {
   display: flex;
   flex-direction: column;
@@ -116,7 +116,20 @@
 .desktopIconCampana {
   background-image: url('/assets/campana.png');
 }
-
+.mainContainerCards2 {
+  display: grid;
+  grid-auto-flow: column dense;
+  grid-auto-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    '.1 .2'
+    '.3 .4'
+    '.5 .6'
+    '.7 .8'
+    '. .';
+}
 @media (min-width: 500px) and (max-width: 1300px) {
   .desktopHeader {
     display: flex;
@@ -157,6 +170,13 @@
     align-items: center;
     margin: 10px;
   }
+  .mainContainerCards2 {
+    display: grid;
+    grid-template-columns: (1fr, 1fr, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    justify-content: space-around;
+  }
 }
 @media (min-width: 1300px) {
   .desktopHeader {
@@ -178,5 +198,12 @@
     padding: 5px;
     /*     box-sizing: border-box;
  */
+  }
+  .mainContainerCards2 {
+    display: grid;
+    grid-template-columns: (1fr, 1fr, 1fr, 1fr, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    justify-content: space-around;
   }
 }
