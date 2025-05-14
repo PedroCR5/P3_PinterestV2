@@ -3,7 +3,7 @@
 
 Te comento rápido sobre el proyecto. La verdad es que veo buena iniciativa, y eso está genial, pero también noto bastante confusión con varios conceptos. Parece que estás sobrepensando algunas cosas y mezclando otras, y eso te está complicando mucho…
 
-En algunos casos podría dejar pasar ciertos fallos, pero en tu caso necesito que entiendas bien lo que estás haciendo y que lo mejores antes de seguir avanzando en el curso.
+En algunos casos podría dejar pasar ciertos fallos, pero en tu caso necesito que entiendas bien lohttp://localhost:5174/ que estás haciendo y que lo mejores antes de seguir avanzando en el curso.
 
 !El Responsive
 
