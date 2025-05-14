@@ -39,7 +39,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: auto;
+  height: max-content;
+  width: max-content;
   margin: 5px;
   display: flex;
   justify-content: center;

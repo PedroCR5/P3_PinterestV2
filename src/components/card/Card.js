@@ -13,10 +13,11 @@ export function createCards(imagesList) {
   for (let i = 0; i < imagesList.length; i++) {
     let imgParaUsar = imagesList[i].urls.thumb;
     let heightImg = imagesList[i].height / 10;
-    const randomColorImg = getRandomColor()
+    const randomColorImg = getRandomColor();
+    //height: ${heightImg}px; width: ${windowWidth}px
     divMainContainer1.innerHTML +=
       `<div class="cardDiv">
-          <div class="imageDiv${i} cardImgDiv" style="border: solid; background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))), url('${imgParaUsar}'); height: ${heightImg}px; width: ${windowWidth}px">
+          <div class="imageDiv${i} cardImgDiv" style="border: solid; background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))), url('${imgParaUsar}'); ">
             <img class="imgImageDiv${i}" />
             <div class="initialIconsBox">
                     ${createButton({ texto: "+53", size: "s", classInfo: `camera off on${i}` })}
