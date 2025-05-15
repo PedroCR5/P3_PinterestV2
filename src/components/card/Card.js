@@ -1,4 +1,4 @@
-import { windowWidth } from "../../../main";
+//import { windowWidth } from "../../../main";
 import { createButton } from "../button/button";
 import "./card.css";
 function getRandomColor() {
@@ -12,7 +12,7 @@ export function createCards(imagesList) {
   divMainContainer1.innerHTML = ``;
   for (let i = 0; i < imagesList.length; i++) {
     let imgParaUsar = imagesList[i].urls.thumb;
-    let heightImg = imagesList[i].height / 10;
+    //let heightImg = imagesList[i].height / 10;
     const randomColorImg = getRandomColor();
     //height: ${heightImg}px; width: ${windowWidth}px
     divMainContainer1.innerHTML +=
