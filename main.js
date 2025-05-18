@@ -3,7 +3,7 @@
 
 Te comento rápido sobre el proyecto. La verdad es que veo buena iniciativa, y eso está genial, pero también noto bastante confusión con varios conceptos. Parece que estás sobrepensando algunas cosas y mezclando otras, y eso te está complicando mucho…
 
-En algunos casos podría dejar pasar ciertos fallos, pero en tu caso necesito que entiendas bien lohttp://localhost:5174/ que estás haciendo y que lo mejores antes de seguir avanzando en el curso.
+En algunos casos podría dejar pasar ciertos fallos, pero en tu caso necesito que entiendas bien lo que estás haciendo y que lo mejores antes de seguir avanzando en el curso.
 
 !El Responsive
 
@@ -28,9 +28,9 @@ Iterar sobre esos datos y pintarlos con una función que genera el HTML de cada 
 Para eso, ya tienes CSS Grid que te organiza las columnas automáticamente según el tamaño de la pantalla.
 
 !Recomendaciones
-Borra esa lógica compleja de columnas.
-Crea una función reutilizable que reciba los datos de una imagen y genere su HTML.
-Cuando tengas los datos, simplemente iteras y pintas con esa función.
+//Borra esa lógica compleja de columnas.
+//Crea una función reutilizable que reciba los datos de una imagen y genere su HTML.
+//Cuando tengas los datos, simplemente iteras y pintas con esa función.
 Seguro que cuando lo veas desde otra perspectiva lo vas a arreglar rápido. Esto te va a ayudar muchísimo para lo que viene en el curso.
 Mucho ánimo, te leemos pronto!
 
@@ -47,7 +47,7 @@ initalFetch
 949×426 107 KB
 Si buscas algo como wood, también lanza peticiones extra (man, person) que no corresponden. Esto ocurre en las líneas 106 y 107. Revísalo.
 Mejora la legibilidad del código, no tienes apenas saltos de línea, y eso hace muy tedioso seguir la lógica. Agrúpalo visualmente mejor.
-El archivo Card.js tiene 421 líneas con bucles complejos y lógica que no necesitas. No es escalable ni reutilizable.
+//El archivo Card.js tiene 421 líneas con bucles complejos y lógica que no necesitas. No es escalable ni reutilizable.
 !Puntos positivos
 Usas bien los template literals en varias partes. Me sorprende que luego no los uses de forma más clara en Card.js…
 La estructura general de carpetas y archivos está bien pensada, con componentes y sus estilos separados. Aun así, podrías dividir más: separar lógica de peticiones, pintado, etc.
