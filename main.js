@@ -53,16 +53,16 @@ Usas bien los template literals en varias partes. Me sorprende que luego no los 
 La estructura general de carpetas y archivos está bien pensada, con componentes y sus estilos separados. Aun así, podrías dividir más: separar lógica de peticiones, pintado, etc.
 !Mejoras opcionales
 El font podría tener más personalidad, y podrías trabajar un poco más los detalles: outline en el focus, tamaños de íconos, etc… */
-
+//? Quitar el modal del inicio
 
 import './style.css';
 import { createButton } from './src/components/button/button';
 import { createCards } from './src/components/card/Card';
-import { createColumns } from './src/components/cardContainers/cardContainer';
-export let windowWidth = (window.innerWidth / 2.3);
-export { numberOfColumns, imagesListPerson };
-let numberOfColumns = 2;
-
+/* import { createColumns } from './src/components/cardContainers/cardContainer'; */
+//export let windowWidth = (window.innerWidth / 2.3);
+export { imagesListPerson };
+//let numberOfColumns = 2;
+let firstWord = 'nada de nada';
 const divApp = document.querySelector("#app");
 divApp.innerHTML =
   `<header>
@@ -84,19 +84,71 @@ divApp.innerHTML =
 </header> 
 <div class="myDiv"></div>
 <main> 
-<div class="mainContainerCards2"></div> 
+<div class="notification" id="notification">¡Esto es una notificación!</div>
+<div id="modal" class="modal" display="none">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...</h2>
+      <p>Muchas gracias.</p>
+    </div>
+  </div>
+<div class="mainContainerCards2">
+<div class="container1 containersList" id="div1"> </div>
+</div> 
 </main>`;
-createColumns()
+// El modal
+// Seleccionar elementos
+//const openModal = document.getElementById('openModal');
+//const closeModal = document.getElementById('closeModal');
+const modal = document.getElementById('modal');
+
+// Abrir el modal
+/* openModal.addEventListener('click', () => {
+  modal.style.display = 'flex';
+}); */
+
+// Cerrar el modal
+/* closeModal.addEventListener('click', () => {
+  modal.style.display = 'none';
+}); */
+
+// Cerrar el modal al hacer clic fuera del contenido
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+
+//createColumns()
 const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
 const endPoint = 'https://api.unsplash.com/search/photos';
 let imagesList = {}
+
+/* function showNotification() {
+  const notification = document.getElementById('notification');
+  notification.style.display = 'block';
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 3000); // Ocultar después de 3 segundos
+}; */
 async function getImages(query) {
   let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
   imagesList = await jsonResponse.results;
   if (imagesList.length === 0) {
     getImages('gatos');
-    alert("¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...");
+    //showNotification()
+    // Habilitamos el modal
+    //const closeModal = document.getElementById('closeModal');
+    const modal = document.getElementById('modal');
+    modal.style.display = 'flex';
+
+
+    // Cerrar el modal al hacer clic fuera del contenido
+
+
+    /*  confirm("¡Busqueda errónea!, por favor intentalo con palabras como gato, perro..."); */
     getImagesPerson('man');
     getImagesPerson('person');
   }
@@ -107,7 +159,7 @@ async function getImages(query) {
   }
 }
 getImages('dog');
-let firstWord = 'nada de nada';
+
 document.getElementById('word').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
     const valorInput = event.target.value;
@@ -155,3 +207,4 @@ async function getImagesPerson(queryPerson) {
 }
 getImagesPerson('man');
 getImagesPerson('person');
+
