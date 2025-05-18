@@ -136,6 +136,8 @@ async function getImages(query) {
   let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
   imagesList = await jsonResponse.results;
+  const modal = document.getElementById('modal');
+  modal.style.display = 'none';
   if (imagesList.length === 0) {
     getImages('gatos');
     //showNotification()
@@ -143,6 +145,7 @@ async function getImages(query) {
     //const closeModal = document.getElementById('closeModal');
     const modal = document.getElementById('modal');
     modal.style.display = 'flex';
+
 
 
     // Cerrar el modal al hacer clic fuera del contenido
@@ -153,6 +156,7 @@ async function getImages(query) {
     getImagesPerson('person');
   }
   else {
+    modal.style.display = 'none';
     createCards(imagesList);
     getImagesPerson('man');
     getImagesPerson('person');
