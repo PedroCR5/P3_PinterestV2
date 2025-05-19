@@ -60,9 +60,37 @@ import { createButton } from './src/components/button/button';
 import { createCards } from './src/components/card/Card';
 /* import { createColumns } from './src/components/cardContainers/cardContainer'; */
 //export let windowWidth = (window.innerWidth / 2.3);
-export { imagesListPerson };
+//export { imagesListPerson };
 //let numberOfColumns = 2;
 let firstWord = 'nada de nada';
+
+
+//Personas
+/* let imagesListP = []
+const imagesListPerson = [];
+let firstPerson = [];
+let secondPerson = [];
+
+async function getImagesPerson(queryPerson) {
+  let response = await fetch(endPoint + '?query=' + queryPerson + '&client_id=' + accesKey);
+  let jsonResponse = await response.json();
+  let imagesListPersonA = await jsonResponse.results;
+  imagesListP = await jsonResponse.results;
+  if (queryPerson === 'person') {
+    firstPerson = imagesListP;
+    return firstPerson;
+  }
+  else {
+    secondPerson = imagesListP;
+    return secondPerson;
+  }
+
+}
+console.log(getImagesPerson('man'));
+console.log(getImagesPerson('person')); */
+
+
+//Pinto el HTML
 const divApp = document.querySelector("#app");
 divApp.innerHTML =
   `<header>
@@ -152,17 +180,17 @@ async function getImages(query) {
 
 
     /*  confirm("¡Busqueda errónea!, por favor intentalo con palabras como gato, perro..."); */
-    getImagesPerson('man');
-    getImagesPerson('person');
+    //getImagesPerson('man');
+    //getImagesPerson('person');
   }
   else {
     modal.style.display = 'none';
-    createCards(imagesList);
-    getImagesPerson('man');
-    getImagesPerson('person');
+    createCards(imagesList);    //getImagesPerson('man');
+    //getImagesPerson('person');
   }
 }
 getImages('dog');
+
 
 document.getElementById('word').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
@@ -185,30 +213,3 @@ document.querySelector(`.iconePinterest`).onclick = function () {
     getImages(firstWord)
   };
 };
-let imagesListP = []
-const imagesListPerson = []
-async function getImagesPerson(queryPerson) {
-  let response = await fetch(endPoint + '?query=' + queryPerson + '&client_id=' + accesKey);
-  let jsonResponse = await response.json();
-  let imagesListPersonA = await jsonResponse.results;
-  imagesListP = await jsonResponse.results;
-  if (queryPerson === 'person') {
-    for (let k = 0; k < 4; k++) {
-      const element = document.getElementById(`miImagenCanvas${k}`);
-      element.src = imagesListPersonA[0].urls.small;
-      const elementName = document.querySelector(`.cardPUser${k}`);
-      elementName.innerText = imagesListPersonA[8].user.first_name + " " + imagesListPersonA[0].user.last_name;
-    }
-  } else {
-    for (let k = 4; k < 10; k++) {
-      const element = document.getElementById(`miImagenCanvas${k}`);
-      element.src = imagesListPersonA[0].urls.small;
-      const elementName = document.querySelector(`.cardPUser${k}`);
-      elementName.innerText = imagesListPersonA[0].user.first_name + " " + imagesListPersonA[0].user.last_name;
-    }
-  }
-  return imagesListPersonA
-}
-getImagesPerson('man');
-getImagesPerson('person');
-

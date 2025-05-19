@@ -1,5 +1,6 @@
 //import { windowWidth } from "../../../main";
 import { createButton } from "../button/button";
+//import { firstPerson, secondPerson } from "../../../main";
 import "./card.css";
 function getRandomColor() {
   const r = Math.floor(Math.random() * 256);
@@ -51,4 +52,19 @@ export function createCards(imagesList) {
 
 
   }
+  //console.log(firstPerson);
+  /* 
+    for (let k = 0; k < 4; k++) {
+      const element1 = document.getElementById(`miImagenCanvas${k}`);
+      element1.src = firstPerson[0].urls.small;
+      const elementName1 = document.querySelector(`.cardPUser${k}`);
+      elementName1.innerText = firstPerson[8].user.first_name + " " + firstPerson[0].user.last_name;
+    }
+    for (let k = 4; k < 10; k++) {
+      const element2 = document.getElementById(`miImagenCanvas${k}`);
+      element2.src = secondPerson[0].urls.small;
+      const elementName2 = document.querySelector(`.cardPUser${k}`);
+      elementName2.innerText = secondPerson[0].user.first_name + " " + secondPerson[0].user.last_name;
+    }
+   */
 }
