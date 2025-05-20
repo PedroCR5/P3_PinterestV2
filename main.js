@@ -58,14 +58,20 @@ El font podría tener más personalidad, y podrías trabajar un poco más los de
 import './style.css';
 import { createButton } from './src/components/button/button';
 import { createCards } from './src/components/card/Card';
-/* import { createColumns } from './src/components/cardContainers/cardContainer'; */
-//export let windowWidth = (window.innerWidth / 2.3);
-//export { imagesListPerson };
-//let numberOfColumns = 2;
+import { getImagesPerson } from './src/components/personInfo/personInfo';
+export const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
+export const endPoint = 'https://api.unsplash.com/search/photos';
+
+//Variables
 let firstWord = 'nada de nada';
 
-
+let imagesList = {}
+let firstPerson = [];
+let secondPerson = [];
 //Personas
+
+console.log(firstPerson = getImagesPerson('man'));
+console.log(secondPerson = getImagesPerson('person'));
 /* let imagesListP = []
 const imagesListPerson = [];
 let firstPerson = [];
@@ -148,10 +154,6 @@ window.addEventListener('click', (e) => {
 });
 
 
-//createColumns()
-const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
-const endPoint = 'https://api.unsplash.com/search/photos';
-let imagesList = {}
 
 /* function showNotification() {
   const notification = document.getElementById('notification');
