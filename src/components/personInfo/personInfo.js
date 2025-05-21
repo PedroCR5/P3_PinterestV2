@@ -9,7 +9,7 @@ export async function getImagesPerson(queryPerson) {
   let imagesListP = await jsonResponse.results;
   if (queryPerson === 'person') {
     let firstPerson = imagesListP;
-    return firstPerson;
+    return firstPerson[0].urls.small;
   }
   else {
     let secondPerson = imagesListP;

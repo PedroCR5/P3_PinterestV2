@@ -61,7 +61,7 @@ import { createCards } from './src/components/card/Card';
 import { getImagesPerson } from './src/components/personInfo/personInfo';
 export const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
 export const endPoint = 'https://api.unsplash.com/search/photos';
-
+export { firstPerson, secondPerson };
 //Variables
 let firstWord = 'nada de nada';
 
