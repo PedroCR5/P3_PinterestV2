@@ -54,6 +54,9 @@ La estructura general de carpetas y archivos está bien pensada, con componentes
 !Mejoras opcionales
 El font podría tener más personalidad, y podrías trabajar un poco más los detalles: outline en el focus, tamaños de íconos, etc… */
 //? Quitar el modal del inicio
+//?Hacer mas grandes las cards
+//? reducir circulos
+
 
 import './style.css';
 import { createButton } from './src/components/button/button';

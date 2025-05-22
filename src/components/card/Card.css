@@ -20,6 +20,7 @@
 }
 .cardDiv {
   margin: 5px;
+  align-items: center;
 }
 .cardInfo {
   display: flex;
@@ -174,9 +175,9 @@
   object-fit: cover;
   border: solid;
   border-radius: 50%;
-  max-width: 30%;
+  max-width: 20%;
   border-width: 10px;
-  margin-top: -40%;
+  margin-top: -30%;
 }
 
 #miImagenCanvas0 {
@@ -185,9 +186,9 @@
   object-fit: cover;
   border: solid;
   border-radius: 50%;
-  max-width: 40%;
+  max-width: 25%;
   border-width: 15px;
-  margin-top: -40%;
+  margin-top: -30%;
 }
 /* .mainContainerCards2 {
   display: grid;
