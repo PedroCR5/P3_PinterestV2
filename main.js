@@ -58,20 +58,45 @@ El font podría tener más personalidad, y podrías trabajar un poco más los de
 import './style.css';
 import { createButton } from './src/components/button/button';
 import { createCards } from './src/components/card/Card';
-import { getImagesPerson } from './src/components/personInfo/personInfo';
+//import { getImagesPerson } from './src/components/personInfo/personInfo';
 export const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
 export const endPoint = 'https://api.unsplash.com/search/photos';
 export { firstPerson, secondPerson };
-//Variables
+//!Variables
 let firstWord = 'nada de nada';
 
 let imagesList = {}
 let firstPerson = [];
 let secondPerson = [];
-//Personas
+//! Traer info de personas
 
-console.log(firstPerson = getImagesPerson('man'));
-console.log(secondPerson = getImagesPerson('person'));
+async function getImagesPerson(queryPerson) {
+  let response = await fetch(endPoint + '?query=' + queryPerson + '&client_id=' + accesKey);
+  let jsonResponse = await response.json();
+  //let imagesListPersonA = await jsonResponse.results;
+  let imagesListP = await jsonResponse.results;
+  if (queryPerson === 'person') {
+    let firstPerson = imagesListP;
+    return firstPerson;
+  }
+  else {
+    let secondPerson = imagesListP;
+    return secondPerson;
+  }
+
+}
+let prueba1 = await getImagesPerson('man');
+console.log(prueba1);
+console.log(prueba1[0].urls.small);
+
+
+
+
+
+
+
+//console.log(firstPerson = getImagesPerson('man'));
+//console.log(secondPerson = getImagesPerson('person'));
 /* let imagesListP = []
 const imagesListPerson = [];
 let firstPerson = [];
@@ -96,7 +121,7 @@ console.log(getImagesPerson('man'));
 console.log(getImagesPerson('person')); */
 
 
-//Pinto el HTML
+//! Pinto el HTML
 const divApp = document.querySelector("#app");
 divApp.innerHTML =
   `<header>
@@ -130,7 +155,8 @@ divApp.innerHTML =
 <div class="container1 containersList" id="div1"> </div>
 </div> 
 </main>`;
-// El modal
+
+//! El modal
 // Seleccionar elementos
 //const openModal = document.getElementById('openModal');
 //const closeModal = document.getElementById('closeModal');
@@ -162,6 +188,8 @@ window.addEventListener('click', (e) => {
     notification.style.display = 'none';
   }, 3000); // Ocultar después de 3 segundos
 }; */
+
+//!Función traer información de la API
 async function getImages(query) {
   let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
@@ -193,7 +221,7 @@ async function getImages(query) {
 }
 getImages('dog');
 
-
+//!Leer palabra de busqueda
 document.getElementById('word').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
     const valorInput = event.target.value;
@@ -207,6 +235,8 @@ document.getElementById('word').addEventListener('keydown', function (event) {
     event.target.value = '';
   }
 });
+
+//! Pinchar en icono Pinterest para refrescar la primera búsqueda
 document.querySelector(`.iconePinterest`).onclick = function () {
   if (firstWord === 'nada de nada') {
     getImages('cat');

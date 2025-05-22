@@ -3,13 +3,14 @@ import { createButton } from "../button/button";
 import { firstPerson, secondPerson } from "../../../main";
 import "./card.css";
 
-
+//! Color
 function getRandomColor() {
   const r = Math.floor(Math.random() * 256);
   const g = Math.floor(Math.random() * 256);
   const b = Math.floor(Math.random() * 256);
   return `rgb(${r}, ${g}, ${b})`;
 }
+//! Función crear cartas
 export function createCards(imagesList) {
   const divMainContainer1 = document.querySelector("#div1");
   divMainContainer1.innerHTML = ``;
@@ -54,18 +55,19 @@ export function createCards(imagesList) {
 
 
   }
-  console.log(firstPerson);
-  console.log(secondPerson);
+  //console.log(firstPerson);
+  //console.log(secondPerson);
   //console.log(firstPerson[0].urls.small);
 
-  const element1 = document.getElementsByClassName(`imgPersonRound`);
+  /* const element1 = document.getElementsByClassName(`imgPersonRound`);
   let prueba1 = [];
   prueba1 = firstPerson[0].urls.small
+ 
   console.log(prueba1);
-
+ñ
   element1.src = firstPerson[0].urls.small;
   const elementName1 = document.querySelector(`.cardPUser${i}`);
-  elementName1.innerText = firstPerson[8].user.first_name + " " + firstPerson[0].user.last_name;
+  elementName1.innerText = firstPerson[8].user.first_name + " " + firstPerson[0].user.last_name; */
   /* 
     for (let k = 0; k < 4; k++) {
       const element1 = document.getElementById(`miImagenCanvas${k}`);
