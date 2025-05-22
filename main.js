@@ -8,7 +8,7 @@ En algunos casos podría dejar pasar ciertos fallos, pero en tu caso necesito qu
 !El Responsive
 
 Uno de los requisitos clave era que la página fuera responsive, como continuación del trabajo anterior en HTML y CSS. Pero ahora mismo no lo es para nada.
-Tus “columnas” no están bien planteadas y, cuando vi el resto del código, me quedó claro que hay una confusión importante. Esta parte no está funcionando correctamente.
+//Tus “columnas” no están bien planteadas y, cuando vi el resto del código, me quedó claro que hay una confusión importante. Esta parte no está funcionando correctamente.
 
 !Peticiones
 
@@ -17,13 +17,13 @@ Más abajo te muestro ejemplos y capturas. Esto tienes que arreglarlo sí o sí.
 
 !Tu Componente Card.js
 
-Aquí es donde más me preocupé. En el main, haces cálculos con el tamaño de pantalla para decidir el número de columnas, lo guardas, y luego intentas pintar en cada columna según eso… Es demasiado complicado para algo que debería ser mucho más sencillo.
-No necesitas calcular nada antes según el ancho de pantalla.
+//Aquí es donde más me preocupé. En el main, haces cálculos con el tamaño de pantalla para decidir el número de columnas, lo guardas, y luego intentas pintar en cada columna según eso… Es demasiado complicado para algo que debería ser mucho más sencillo.
+//No necesitas calcular nada antes según el ancho de pantalla.
 
 El flujo debería ser:
 
-Hacer la petición.
-Recibir los datos.
+//Hacer la petición.
+//Recibir los datos.
 Iterar sobre esos datos y pintarlos con una función que genera el HTML de cada carta.
 Para eso, ya tienes CSS Grid que te organiza las columnas automáticamente según el tamaño de la pantalla.
 
@@ -31,8 +31,8 @@ Para eso, ya tienes CSS Grid que te organiza las columnas automáticamente segú
 //Borra esa lógica compleja de columnas.
 //Crea una función reutilizable que reciba los datos de una imagen y genere su HTML.
 //Cuando tengas los datos, simplemente iteras y pintas con esa función.
-Seguro que cuando lo veas desde otra perspectiva lo vas a arreglar rápido. Esto te va a ayudar muchísimo para lo que viene en el curso.
-Mucho ánimo, te leemos pronto!
+//Seguro que cuando lo veas desde otra perspectiva lo vas a arreglar rápido. Esto te va a ayudar muchísimo para lo que viene en el curso.
+//Mucho ánimo, te leemos pronto!
 
 !Notas
 La página no es responsive.
@@ -45,7 +45,7 @@ El primer fetch lanza 5 peticiones, algunas con queries diferentes como dog, man
 initalFetch
 initalFetch
 949×426 107 KB
-Si buscas algo como wood, también lanza peticiones extra (man, person) que no corresponden. Esto ocurre en las líneas 106 y 107. Revísalo.
+//Si buscas algo como wood, también lanza peticiones extra (man, person) que no corresponden. Esto ocurre en las líneas 106 y 107. Revísalo.
 Mejora la legibilidad del código, no tienes apenas saltos de línea, y eso hace muy tedioso seguir la lógica. Agrúpalo visualmente mejor.
 //El archivo Card.js tiene 421 líneas con bucles complejos y lógica que no necesitas. No es escalable ni reutilizable.
 !Puntos positivos
@@ -58,68 +58,21 @@ El font podría tener más personalidad, y podrías trabajar un poco más los de
 import './style.css';
 import { createButton } from './src/components/button/button';
 import { createCards } from './src/components/card/Card';
-//import { getImagesPerson } from './src/components/personInfo/personInfo';
+import { getImagesPerson } from './src/components/personInfo/personInfo';
 export const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
 export const endPoint = 'https://api.unsplash.com/search/photos';
-export { firstPerson, secondPerson };
+export { element1Src, element2Src, elementName1InnerText, elementName2InnerText };
 //!Variables
 let firstWord = 'nada de nada';
-
 let imagesList = {}
-let firstPerson = [];
-let secondPerson = [];
+
 //! Traer info de personas
-
-async function getImagesPerson(queryPerson) {
-  let response = await fetch(endPoint + '?query=' + queryPerson + '&client_id=' + accesKey);
-  let jsonResponse = await response.json();
-  //let imagesListPersonA = await jsonResponse.results;
-  let imagesListP = await jsonResponse.results;
-  if (queryPerson === 'person') {
-    let firstPerson = imagesListP;
-    return firstPerson;
-  }
-  else {
-    let secondPerson = imagesListP;
-    return secondPerson;
-  }
-
-}
-let prueba1 = await getImagesPerson('man');
-console.log(prueba1);
-console.log(prueba1[0].urls.small);
-
-
-
-
-
-
-
-//console.log(firstPerson = getImagesPerson('man'));
-//console.log(secondPerson = getImagesPerson('person'));
-/* let imagesListP = []
-const imagesListPerson = [];
-let firstPerson = [];
-let secondPerson = [];
-
-async function getImagesPerson(queryPerson) {
-  let response = await fetch(endPoint + '?query=' + queryPerson + '&client_id=' + accesKey);
-  let jsonResponse = await response.json();
-  let imagesListPersonA = await jsonResponse.results;
-  imagesListP = await jsonResponse.results;
-  if (queryPerson === 'person') {
-    firstPerson = imagesListP;
-    return firstPerson;
-  }
-  else {
-    secondPerson = imagesListP;
-    return secondPerson;
-  }
-
-}
-console.log(getImagesPerson('man'));
-console.log(getImagesPerson('person')); */
-
+let firstPerson = await getImagesPerson('man');
+let secondPerson = await getImagesPerson('person');
+let element1Src = firstPerson[0].urls.small;
+let elementName1InnerText = firstPerson[0].user.first_name + " " + firstPerson[0].user.last_name;
+let element2Src = secondPerson[0].urls.small;
+let elementName2InnerText = secondPerson[8].user.first_name + " " + secondPerson[0].user.last_name;
 
 //! Pinto el HTML
 const divApp = document.querySelector("#app");

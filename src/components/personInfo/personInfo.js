@@ -1,11 +1,9 @@
 import { accesKey, endPoint } from "../../../main";
 
-
 //! Traer información de personas para cartas
-/* export async function getImagesPerson(queryPerson) {
+export async function getImagesPerson(queryPerson) {
   let response = await fetch(endPoint + '?query=' + queryPerson + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
-  //let imagesListPersonA = await jsonResponse.results;
   let imagesListP = await jsonResponse.results;
   if (queryPerson === 'person') {
     let firstPerson = imagesListP;
@@ -15,5 +13,4 @@ import { accesKey, endPoint } from "../../../main";
     let secondPerson = imagesListP;
     return secondPerson;
   }
-
-} */
+}

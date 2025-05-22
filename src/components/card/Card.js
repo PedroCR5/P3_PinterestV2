@@ -1,6 +1,6 @@
 //import { windowWidth } from "../../../main";
 import { createButton } from "../button/button";
-import { firstPerson, secondPerson } from "../../../main";
+import { element1Src, element2Src, elementName1InnerText, elementName2InnerText } from "../../../main";
 import "./card.css";
 
 //! Color
@@ -16,9 +16,7 @@ export function createCards(imagesList) {
   divMainContainer1.innerHTML = ``;
   for (let i = 0; i < imagesList.length; i++) {
     let imgParaUsar = imagesList[i].urls.thumb;
-    //let heightImg = imagesList[i].height / 10;
     const randomColorImg = getRandomColor();
-    //height: ${heightImg}px; width: ${windowWidth}px
     divMainContainer1.innerHTML +=
       `<div class="cardDiv">
           <div class="imageDiv${i} cardImgDiv" style="border: solid; background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))), url('${imgParaUsar}'); ">
@@ -52,34 +50,17 @@ export function createCards(imagesList) {
     const imgButtonCamera = document.querySelector(`.camera`);
     imgButtonCamera.innerHTML = `<img class="imgCamera" src="./assets/camera.png" alt="pinterest">
           <span class="likesHeart">+53</span>`
-
-
   }
-  //console.log(firstPerson);
-  //console.log(secondPerson);
-  //console.log(firstPerson[0].urls.small);
-
-  /* const element1 = document.getElementsByClassName(`imgPersonRound`);
-  let prueba1 = [];
-  prueba1 = firstPerson[0].urls.small
- 
-  console.log(prueba1);
-ñ
-  element1.src = firstPerson[0].urls.small;
-  const elementName1 = document.querySelector(`.cardPUser${i}`);
-  elementName1.innerText = firstPerson[8].user.first_name + " " + firstPerson[0].user.last_name; */
-  /* 
-    for (let k = 0; k < 4; k++) {
-      const element1 = document.getElementById(`miImagenCanvas${k}`);
-      element1.src = firstPerson[0].urls.small;
-      const elementName1 = document.querySelector(`.cardPUser${k}`);
-      elementName1.innerText = firstPerson[8].user.first_name + " " + firstPerson[0].user.last_name;
-    }
-    for (let k = 4; k < 10; k++) {
-      const element2 = document.getElementById(`miImagenCanvas${k}`);
-      element2.src = secondPerson[0].urls.small;
-      const elementName2 = document.querySelector(`.cardPUser${k}`);
-      elementName2.innerText = secondPerson[0].user.first_name + " " + secondPerson[0].user.last_name;
-    }
-   */
+  for (let k = 0; k < 4; k++) {
+    const element1 = document.getElementById(`miImagenCanvas${k}`);
+    element1.src = element1Src;
+    const elementName1 = document.querySelector(`.cardPUser${k}`);
+    elementName1.innerText = elementName1InnerText;
+  }
+  for (let k = 4; k < 10; k++) {
+    const element2 = document.getElementById(`miImagenCanvas${k}`);
+    element2.src = element2Src;
+    const elementName2 = document.querySelector(`.cardPUser${k}`);
+    elementName2.innerText = elementName2InnerText;
+  }
 }
