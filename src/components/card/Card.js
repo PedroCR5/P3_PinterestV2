@@ -58,7 +58,14 @@ export function createCards(imagesList) {
   console.log(secondPerson);
   //console.log(firstPerson[0].urls.small);
 
+  const element1 = document.getElementsByClassName(`imgPersonRound`);
+  let prueba1 = [];
+  prueba1 = firstPerson[0].urls.small
+  console.log(prueba1);
 
+  element1.src = firstPerson[0].urls.small;
+  const elementName1 = document.querySelector(`.cardPUser${i}`);
+  elementName1.innerText = firstPerson[8].user.first_name + " " + firstPerson[0].user.last_name;
   /* 
     for (let k = 0; k < 4; k++) {
       const element1 = document.getElementById(`miImagenCanvas${k}`);
