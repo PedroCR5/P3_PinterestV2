@@ -15,19 +15,19 @@ Uno de los requisitos clave era que la página fuera responsive, como continuaci
 Funcionalmente, las peticiones se hacen, pintas los resultados y los gatitos si no hay nada, lo cual está bien. Pero… al abrir la consola, aparecen muchas peticiones innecesarias. Eso es un problema grave: hacer peticiones que consumen recursos del usuario sin usar sus resultados, no es lo más óptimo.
 Más abajo te muestro ejemplos y capturas. Esto tienes que arreglarlo sí o sí.
 
-!Tu Componente Card.js
+//!Tu Componente Card.js
 
 //Aquí es donde más me preocupé. En el main, haces cálculos con el tamaño de pantalla para decidir el número de columnas, lo guardas, y luego intentas pintar en cada columna según eso… Es demasiado complicado para algo que debería ser mucho más sencillo.
 //No necesitas calcular nada antes según el ancho de pantalla.
 
-El flujo debería ser:
+//El flujo debería ser:
 
 //Hacer la petición.
 //Recibir los datos.
-Iterar sobre esos datos y pintarlos con una función que genera el HTML de cada carta.
-Para eso, ya tienes CSS Grid que te organiza las columnas automáticamente según el tamaño de la pantalla.
+//Iterar sobre esos datos y pintarlos con una función que genera el HTML de cada carta.
+//Para eso, ya tienes CSS Grid que te organiza las columnas automáticamente según el tamaño de la pantalla.
 
-!Recomendaciones
+//!Recomendaciones
 //Borra esa lógica compleja de columnas.
 //Crea una función reutilizable que reciba los datos de una imagen y genere su HTML.
 //Cuando tengas los datos, simplemente iteras y pintas con esa función.
@@ -99,14 +99,8 @@ divApp.innerHTML =
 </header> 
 <div class="myDiv"></div>
 <main> 
-<div class="notification" id="notification">¡Esto es una notificación!</div>
-<div id="modal" class="modal" display="none">
-    <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
-      <h2>¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...</h2>
-      <p>Muchas gracias.</p>
-    </div>
-  </div>
+<div class="notification" id="notification"></div>
+
 <div class="mainContainerCards2">
 <div class="container1 containersList" id="div1"> </div>
 </div> 
@@ -116,7 +110,7 @@ divApp.innerHTML =
 // Seleccionar elementos
 //const openModal = document.getElementById('openModal');
 //const closeModal = document.getElementById('closeModal');
-const modal = document.getElementById('modal');
+//const modal = document.getElementById('modal');
 
 // Abrir el modal
 /* openModal.addEventListener('click', () => {
@@ -129,12 +123,12 @@ const modal = document.getElementById('modal');
 }); */
 
 // Cerrar el modal al hacer clic fuera del contenido
-window.addEventListener('click', (e) => {
+/* window.addEventListener('click', (e) => {
   if (e.target === modal) {
     modal.style.display = 'none';
   }
 });
-
+ */
 
 
 /* function showNotification() {
@@ -150,15 +144,21 @@ async function getImages(query) {
   let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
   imagesList = await jsonResponse.results;
-  const modal = document.getElementById('modal');
-  modal.style.display = 'none';
+  /*  const modal = document.getElementById('modal');
+   modal.style.display = 'none'; */
   if (imagesList.length === 0) {
     getImages('gatos');
     //showNotification()
     // Habilitamos el modal
     //const closeModal = document.getElementById('closeModal');
-    const modal = document.getElementById('modal');
-    modal.style.display = 'flex';
+    const modalNotification = document.getElementById('notification');
+    notification.style.display = 'flex';
+    modalNotification.innerHTML =
+      `
+      <h2>¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...</h2>
+                  ${createButton({ texto: "Intentar de nuevo", size: "s", classInfo: `tryAgain` })}
+    `;
+    //modal.style.display = 'flex';
 
 
 
@@ -170,7 +170,7 @@ async function getImages(query) {
     //getImagesPerson('person');
   }
   else {
-    modal.style.display = 'none';
+    //modal.style.display = 'none';
     createCards(imagesList);    //getImagesPerson('man');
     //getImagesPerson('person');
   }
@@ -201,3 +201,19 @@ document.querySelector(`.iconePinterest`).onclick = function () {
     getImages(firstWord)
   };
 };
+
+
+document.querySelector(`.tryAgain`).onclick = function () {
+  console.log('Hola');
+
+  const modalNotification = document.getElementById('notification');
+
+  modalNotification.style.display = 'none';
+
+};
+
+/* const clickOnNotification = document.querySelector(`.tryAgain`);
+if (clickOnNotification.onclick = true) {
+  notification.style.display = 'none';
+
+}; */
