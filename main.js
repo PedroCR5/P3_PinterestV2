@@ -139,6 +139,11 @@ divApp.innerHTML =
   }, 3000); // Ocultar después de 3 segundos
 }; */
 
+function noDisplayNotification() {
+  console.log(`Hola addEvent`);
+  //modalNotification.style.display = 'flex';
+}
+
 //!Función traer información de la API
 async function getImages(query) {
   let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
@@ -156,7 +161,7 @@ async function getImages(query) {
     modalNotification.innerHTML =
       `
       <h2>¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...</h2>
-                  ${createButton({ texto: "Intentar de nuevo", size: "s", classInfo: `tryAgain` })}
+                  ${createButton({ texto: "Intentar de nuevo", size: "s", classInfo: `tryAgain`, onclick: "noDisplayNotification()" })}
     `;
     //modal.style.display = 'flex';
 
@@ -203,14 +208,20 @@ document.querySelector(`.iconePinterest`).onclick = function () {
 };
 
 
-document.querySelector(`.tryAgain`).onclick = function () {
+const tryAgain1 = document.getElementById('tryAgain');
+console.log(`a ver`);
+console.log(tryAgain1);
+
+//tryAgain1.addEventListener('click', displayNone());
+
+
+
+
+/* document.querySelector(`.tryAgain`).onclick = function () {
   console.log('Hola');
-
   const modalNotification = document.getElementById('notification');
-
   modalNotification.style.display = 'none';
-
-};
+}; */
 
 /* const clickOnNotification = document.querySelector(`.tryAgain`);
 if (clickOnNotification.onclick = true) {

@@ -6,6 +6,7 @@ export const createButton = ({
   bgColor,
   bgImage = `/assets/pinterest_logo.png`,
   classInfo = "",
+  onclick = "",
 }) => {
-  return `<button class="buttonInfo1 ${size} ${classInfo}" style="background-color: ${bgColor}" style="background-image: url(${bgImage})">${texto}</button>`
+  return `<button class="buttonInfo1 ${size} ${classInfo}" style="background-color: ${bgColor}" style="onclick=${onclick} style="background-image: url(${bgImage})">${texto}</button>`
 }
