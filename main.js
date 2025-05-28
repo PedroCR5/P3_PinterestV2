@@ -99,7 +99,10 @@ divApp.innerHTML =
 </header> 
 <div class="myDiv"></div>
 <main> 
-<div class="notification" id="notification"></div>
+<div class="notification" id="notification">
+<h2>¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...</h2>
+                  ${createButton({ texto: "Intentar de nuevo", size: "s", classInfo: `tryAgain`, onclick: "noDisplayNotification()" })}
+</div>
 
 <div class="mainContainerCards2">
 <div class="container1 containersList" id="div1"> </div>
@@ -107,38 +110,6 @@ divApp.innerHTML =
 </main>`;
 
 //! El modal
-// Seleccionar elementos
-//const openModal = document.getElementById('openModal');
-//const closeModal = document.getElementById('closeModal');
-//const modal = document.getElementById('modal');
-
-// Abrir el modal
-/* openModal.addEventListener('click', () => {
-  modal.style.display = 'flex';
-}); */
-
-// Cerrar el modal
-/* closeModal.addEventListener('click', () => {
-  modal.style.display = 'none';
-}); */
-
-// Cerrar el modal al hacer clic fuera del contenido
-/* window.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
-  }
-});
- */
-
-
-/* function showNotification() {
-  const notification = document.getElementById('notification');
-  notification.style.display = 'block';
-  setTimeout(() => {
-    notification.style.display = 'none';
-  }, 3000); // Ocultar después de 3 segundos
-}; */
-
 function noDisplayNotification() {
   console.log(`Hola addEvent`);
   //modalNotification.style.display = 'flex';
@@ -149,35 +120,15 @@ async function getImages(query) {
   let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
   let jsonResponse = await response.json();
   imagesList = await jsonResponse.results;
-  /*  const modal = document.getElementById('modal');
-   modal.style.display = 'none'; */
+
   if (imagesList.length === 0) {
     getImages('gatos');
-    //showNotification()
-    // Habilitamos el modal
-    //const closeModal = document.getElementById('closeModal');
     const modalNotification = document.getElementById('notification');
-    notification.style.display = 'flex';
-    modalNotification.innerHTML =
-      `
-      <h2>¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...</h2>
-                  ${createButton({ texto: "Intentar de nuevo", size: "s", classInfo: `tryAgain`, onclick: "noDisplayNotification()" })}
-    `;
-    //modal.style.display = 'flex';
-
-
-
-    // Cerrar el modal al hacer clic fuera del contenido
-
-
-    /*  confirm("¡Busqueda errónea!, por favor intentalo con palabras como gato, perro..."); */
-    //getImagesPerson('man');
-    //getImagesPerson('person');
+    modalNotification.style.display = 'flex';
   }
   else {
     //modal.style.display = 'none';
-    createCards(imagesList);    //getImagesPerson('man');
-    //getImagesPerson('person');
+    createCards(imagesList);
   }
 }
 getImages('dog');
@@ -207,24 +158,6 @@ document.querySelector(`.iconePinterest`).onclick = function () {
   };
 };
 
-
 const tryAgain1 = document.getElementById('tryAgain');
 console.log(`a ver`);
 console.log(tryAgain1);
-
-//tryAgain1.addEventListener('click', displayNone());
-
-
-
-
-/* document.querySelector(`.tryAgain`).onclick = function () {
-  console.log('Hola');
-  const modalNotification = document.getElementById('notification');
-  modalNotification.style.display = 'none';
-}; */
-
-/* const clickOnNotification = document.querySelector(`.tryAgain`);
-if (clickOnNotification.onclick = true) {
-  notification.style.display = 'none';
-
-}; */
