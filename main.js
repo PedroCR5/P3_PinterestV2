@@ -35,7 +35,6 @@ import { funcionAEjecutar } from './src/components/modal/modal';
 export const accesKey = 'ulcAHukAVcmsmE3YQCJcVOoI_rtjQjdVJzrx7QnswEI';
 export const endPoint = 'https://api.unsplash.com/search/photos';
 export { element1Src, element2Src, elementName1InnerText, elementName2InnerText };
-export let imagesList = {}
 
 //!Variables
 let firstWord = 'nada de nada';
