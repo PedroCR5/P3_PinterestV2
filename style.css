@@ -9,7 +9,6 @@
   --rtc-color-3: red;
   --rtc-color-4: #080404;
   --rtc-color-fondo-1: #e7e7e7;
-
   --rtc-bgColor: var(--rtc-color-1);
   --rtc-bgColor2: var(--rtc-color-2);
   --rtc-bgColor3: var(--rtc-color-3);
@@ -17,7 +16,6 @@
   --rtc-text: var(--rtc-color-4);
   --rtc-text-2: var(--rtc-color-1);
   --rtc-text-3: var(--rtc-color-3);
-
   /* BORDER RADIUS */
   --rtc-border-radius: 5px;
   /* SPACINGS */
@@ -71,23 +69,10 @@
   box-sizing: border-box;
 }
 
-/* .mainContainerCards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: auto;
-  gap: 10px;
-} */
 .icon {
   background-color: var(--rtc-bgColor2);
 }
 
-/* .mainContainerCards2 {
-  display: flex;
-} */
-/* .containersList {
-  display: flex;
-  flex-direction: column;
-} */
 .desktopHeader {
   display: flex;
 }
@@ -119,20 +104,7 @@
 .mainContainerCards2 {
   display: grid;
   grid-auto-columns: minmax(100px, auto);
-  /*   grid-template-columns: repeat(3, 100px); */
   grid-auto-flow: column dense;
-  /*  gap: 10px; */
-
-  /*   grid-auto-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
-  /*  gap: 0px 0px; */
-  /*  grid-template-areas:
-    '.1 .2'
-    '.3 .4'
-    '.5 .6'
-    '.7 .8'
-    '. .'; */
 }
 
 .containersList {
@@ -225,33 +197,15 @@
 
 .notification {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #4caf50;
-  color: white;
+  font-size: small;
+  margin: var(--rtc-margin-s);
+  background-color: var(--rtc-bgColor3);
+  color: var(--rtc-color-4);
   padding: 10px 20px;
   border-radius: 5px;
   display: none;
   flex-direction: column;
   align-items: center;
+  width: fit-content;
+  z-index: 1;
 }
-
-/* Contenido del modal */
-.modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Botón de cierre */
-/* .close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-} */
