@@ -1,7 +1,7 @@
 //import { createCards } from "./src/components/card/Card";
 import { createCards } from "../card/Card";
 import { endPoint, accesKey } from "../../../main";
-import "./infoAPI.css";
+//import "./infoAPI.css";
 
 let imagesList = {}
 export async function getImages(query) {

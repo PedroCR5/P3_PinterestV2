@@ -1,7 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
 :root {
   /* COLORS */
   --rtc-color-1: #ffffff;
@@ -36,4 +32,110 @@
   --rtc-gap-xl: 40px;
 
   --opacidad-negro: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  background-color: var(--rtc-bgColor);
+}
+
+/* Header */
+.headerContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1%;
+}
+.iconePinterest {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.headerSearchContainer {
+  display: flex;
+  background-color: var(--rtc-bgColor2);
+  padding: 1%;
+  border-radius: 20px;
+  width: 90%;
+  margin: 10px;
+}
+.inputInfo {
+  background-color: var(--rtc-bgColor2);
+  border: none;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.icon {
+  background-color: var(--rtc-bgColor2);
+}
+
+.desktopHeader {
+  display: flex;
+}
+.desktopButton {
+  color: black;
+
+  padding-left: 25%;
+  padding-right: 25%;
+  width: 100%;
+  border-radius: 22%;
+  overflow-x: visible;
+  font-weight: bold;
+
+  border-radius: 47%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+.desktopHeader {
+  display: none;
+}
+.initial {
+  color: var(--rtc-bgColor);
+}
+.desktopIconCampana {
+  background-image: url('/assets/campana.png');
+}
+
+/* Main */
+.main {
+  display: grid;
+  flex-wrap: wrap;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.notification {
+  position: fixed;
+  font-size: small;
+  margin: var(--rtc-margin-s);
+  background-color: var(--rtc-bgColor3);
+  color: var(--rtc-color-4);
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  z-index: 1;
+}
+
+.mainContainerCards2 {
+  display: grid;
+  grid-auto-columns: minmax(100px, auto);
+  grid-auto-flow: column dense;
+}
+
+.containersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1px;
+  flex-wrap: wrap;
 }

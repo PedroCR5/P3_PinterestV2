@@ -23,8 +23,10 @@ Usas bien los template literals en varias partes. Me sorprende que luego no los 
 La estructura general de carpetas y archivos está bien pensada, con componentes y sus estilos separados. Aun así, podrías dividir más: separar lógica de peticiones, pintado, etc.
 !Mejoras opcionales
 El font podría tener más personalidad, y podrías trabajar un poco más los detalles: outline en el focus, tamaños de íconos, etc… */
-//?Hacer mas grandes las cards
+//? Hacer mas grandes las cards
 //? reducir circulos
+//? primera card los cuadros o buttons
+
 
 
 import './style.css';

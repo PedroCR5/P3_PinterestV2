@@ -1,32 +1,18 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.main {
-  flex-wrap: wrap;
-  display: grid;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.mainContainerCards {
-  flex-wrap: wrap;
-  display: grid;
-  max-width: 100%;
-  overflow-x: hidden;
-  justify-items: center;
-  justify-content: center;
-}
 .cardDiv {
   margin: 5px;
+  display: flex;
   align-items: center;
+  max-width: fit-content;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
 }
 .cardInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .upImg {
   background-image: url(/assets/upImage.png);
 }
@@ -40,11 +26,9 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: max-content;
-  width: max-content;
+  height: 100%;
+  width: 100%;
   margin: 5px;
-  display: flex;
-  justify-content: center;
 }
 
 .cardBottomPart {
@@ -73,13 +57,6 @@
   margin-right: 50%;
   align-items: center;
   font-weight: bold;
-}
-
-.cardDiv {
-  max-width: fit-content;
-  display: flex;
-  flex-direction: column;
-  height: auto;
 }
 
 .upImg {
@@ -112,7 +89,8 @@
   padding: 5%;
   margin: 5%;
   justify-content: center;
-  width: 30%;
+  width: 20%;
+  height: 30%;
   opacity: 100%;
 }
 .off {
@@ -138,7 +116,7 @@
   overflow: hidden;
   position: relative;
   border-radius: 20%;
-  height: 40%;
+  height: 20%;
   opacity: 100%;
 }
 .visitar {
@@ -167,6 +145,8 @@
 
 .imageDiv0 {
   --opacidad-negro: 0.5;
+  display: flex;
+  justify-content: center;
 }
 
 .imgPersonRound {
@@ -176,7 +156,7 @@
   border: solid;
   border-radius: 50%;
   max-width: 20%;
-  border-width: 10px;
+  border-width: 5px;
   margin-top: -30%;
 }
 
@@ -187,6 +167,6 @@
   border: solid;
   border-radius: 50%;
   max-width: 25%;
-  border-width: 15px;
+  border-width: 10px;
   margin-top: -30%;
 }
