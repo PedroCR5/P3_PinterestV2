@@ -33,16 +33,13 @@
 
   --opacidad-negro: 0;
 }
-
 * {
   margin: 0;
   padding: 0;
 }
-
 #app {
   background-color: var(--rtc-bgColor);
 }
-
 /* Header */
 .headerContainer {
   display: flex;
@@ -54,6 +51,9 @@
   width: 50px;
   height: 50px;
   cursor: pointer;
+}
+.iconePinterest:hover {
+  transform: scale(1.05) skew(-5deg);
 }
 .headerSearchContainer {
   display: flex;
@@ -70,24 +70,20 @@
   padding: 5px;
   box-sizing: border-box;
 }
-
 .icon {
   background-color: var(--rtc-bgColor2);
 }
-
 .desktopHeader {
   display: flex;
 }
 .desktopButton {
   color: black;
-
   padding-left: 25%;
   padding-right: 25%;
   width: 100%;
   border-radius: 22%;
   overflow-x: visible;
   font-weight: bold;
-
   border-radius: 47%;
   display: flex;
   justify-content: center;
@@ -103,7 +99,6 @@
 .desktopIconCampana {
   background-image: url('/assets/campana.png');
 }
-
 /* Main */
 .main {
   display: grid;
@@ -111,7 +106,6 @@
   max-width: 100%;
   overflow-x: hidden;
 }
-
 .notification {
   position: fixed;
   font-size: small;
@@ -125,14 +119,13 @@
   align-items: center;
   width: fit-content;
   z-index: 1;
+  opacity: 0.95;
 }
-
 .mainContainerCards2 {
   display: grid;
   grid-auto-columns: minmax(100px, auto);
   grid-auto-flow: column dense;
 }
-
 .containersList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

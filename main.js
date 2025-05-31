@@ -1,34 +1,3 @@
-
-/*
-!El Responsive
-
-Uno de los requisitos clave era que la página fuera responsive, como continuación del trabajo anterior en HTML y CSS. Pero ahora mismo no lo es para nada.
-
-!Notas
-La página no es responsive.
-
-Al abrir la página, aparece este error:
-initialError
-initialError
-608×125 3.24 KB
-El primer fetch lanza 5 peticiones, algunas con queries diferentes como dog, man, person:
-initalFetch
-initalFetch
-949×426 107 KB
-
-Mejora la legibilidad del código, no tienes apenas saltos de línea, y eso hace muy tedioso seguir la lógica. Agrúpalo visualmente mejor.
-
-!Puntos positivos
-Usas bien los template literals en varias partes. Me sorprende que luego no los uses de forma más clara en Card.js…
-La estructura general de carpetas y archivos está bien pensada, con componentes y sus estilos separados. Aun así, podrías dividir más: separar lógica de peticiones, pintado, etc.
-!Mejoras opcionales
-El font podría tener más personalidad, y podrías trabajar un poco más los detalles: outline en el focus, tamaños de íconos, etc… */
-//? Hacer mas grandes las cards
-//? reducir circulos
-//? primera card los cuadros o buttons
-
-
-
 import './style.css';
 import { createButton } from './src/components/button/button';
 import { getImagesPerson } from './src/components/personInfo/personInfo';
@@ -72,8 +41,8 @@ divApp.innerHTML =
 <div class="myDiv"></div>
 <main> 
 <div class="notification" id="notification">
-  <h2 class="notificationH2">¡Busqueda errónea!, por favor intentalo con palabras como gato, perro...</h2>
-  ${createButton({ texto: "Intentar de nuevo", size: "s", classInfo: `tryAgain` })}
+  <h2 class="notificationH2">¡Busqueda errónea!, por favor inténtalo con palabras como gato, perro...</h2>
+  ${createButton({ texto: "Pulsa aquí para intentarlo de nuevo", size: "s", classInfo: `tryAgain` })}
 </div>
 <div class="mainContainerCards2">
   <div class="container1 containersList" id="div1"> </div>
@@ -91,12 +60,9 @@ getImages('dog');
 document.getElementById('word').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
     const valorInput = event.target.value;
-    console.log(firstWord);
     if (firstWord === 'nada de nada') {
       firstWord = event.target.value;
-      console.log(firstWord);
     }
-    console.log(firstWord);
     getImages(`${valorInput}`);
     event.target.value = '';
   }
